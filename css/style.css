@@ -2,9 +2,11 @@ body {
     background-color: white;
     font-family: 'Raleway', sans-serif;
     margin: 0;
-    padding: 0;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+#expression {
+       
 }
 #main-header {
     margin-top: 130px;
@@ -15,6 +17,12 @@ body {
     font-weight: 100;   
 }
 .guide {
+    padding-left: 15%;
+}
+#startover {
+    margin-left: 20%;
+}
+.guide, #expression, #expguide {
     margin-left: 10%;
     margin-right: 10%
 }
@@ -22,7 +30,8 @@ body {
     background-size: cover;
     position: absolute;
     height:100%;
-    margin: 0px;
+    margin-left: 10%;
+    width: 900px;
 }
 .circle {
     height: 10px;
@@ -31,4 +40,41 @@ body {
     border: black 1px ridge;
     position: absolute;
     border-radius: 70px;
+}
+
+.credits {
+    margin-right: 0%;
+    position: absolute;
+    margin-top: 30%;
+    
+}
+
+#buttons > button {
+    width: 40%;
+    float: left;
+    margin-right: 5%;
+    background-color: #FFF;
+    border: 1px solid;
+    height: 50px;
+    font-size: 25px;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    font-weight: 300;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+#expression {
+    width: 65%;
+    height: 56%;
+    font-size: 40px;
+    margin-top: 10px;
+    border: 0;
+    border-bottom: 1px ridge #000;
+    font-family: 'Raleway', sans-serif;
+    outline: none;
+}
+div#buttons {
+    position: absolute;
+    margin-left: 18%;
+    width: 80%;
 }
