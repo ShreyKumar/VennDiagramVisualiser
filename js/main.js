@@ -1,5 +1,6 @@
 //EVENTS
 $(document).ready(function(){
+    $("#expression").hide();
 
     $("button#draw").click(function(){
         //set guide
@@ -50,12 +51,26 @@ $(document).ready(function(){
         $(".circle:last-child").stop();
     });
     $("#enter").click(function(){
-        $("#buttons").append("<br /><input type='text' name='exp' id='expression'/>");
-        $("div#buttons").append("<div id='expguide'>Guide: n - intersection, u - union, ' - complement</div>");
+        $("#expression").show();
+        $("div#expguide").append("Guide: n - intersection, u - union, ' - complement");
+
+        $("#expression").keyup(function (e) {
+            if (e.keyCode == 13) {
+                if(check_exp($("#expguide").val()){
+                    
+                } else {
+
+                }
+            }
+        });
+
     });
+
+
+
 });
 
 //EXPRESSION CHECKER
 function check_exp(exp){
-    return /^[A-Z] (u|n) [A-Z]$/.test(exp);
+    return /^[A-Z]'? (u|n) [A-Z]$/.test(exp);
 }
