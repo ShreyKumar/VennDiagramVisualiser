@@ -3,6 +3,7 @@ $(document).ready(function(){
     $("input#expression").hide();
     $("#startover").hide();
     var circle = "<div class='circle' style='border-color: black'></div>";
+    var shaded = "<div class='shaded'></div>";
 
 
     $("button#draw").click(function(){
@@ -78,7 +79,8 @@ $(document).ready(function(){
                     $(".playground").append(circle);
 
 
-                    $(".circle:last-child").css("left", "400px")
+                    $(".circle:last-child").css("left", "400px");
+                    $(".circle:last-child").addClass("first");
 
                     $(".circle:last-child").animate({
                         height: 140,
@@ -94,6 +96,8 @@ $(document).ready(function(){
                     $(".playground").append(circle);
 
                     $(".circle:last-child").css("right", "263px");
+                    $(".circle:last-child").addClass("second");
+
                     $(".circle:last-child").animate({
                         height: 140,
                         width: 140,
@@ -102,6 +106,8 @@ $(document).ready(function(){
                     }, 2000, function() {
                         // Animation complete.
                         add_sound();
+                        $("div.playground").append(shaded);
+                        $(".circle.first").addClass("shaded-active");
                     });
 
 
@@ -109,11 +115,13 @@ $(document).ready(function(){
             }
         });
 
+
     });
 
 
 
 });
+
 
 function add_sound(){
     $("audio").remove();
